@@ -15,6 +15,13 @@ class ColumbiaStudentResource:
         pw = os.environ.get("DBPW")
         h = os.environ.get("DBHOST")
 
+        if usr is None:
+            usr = "admin"
+        if pw is None:
+            pw = "dbuserdbuser"
+        if h is None:
+            h = "DBHOST=e6156-demo1.cw2ylftvdgpn.us-east-1.rds.amazonaws.com"
+
         conn = pymysql.connect(
             user=usr,
             password=pw,
